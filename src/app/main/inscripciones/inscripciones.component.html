@@ -1,0 +1,56 @@
+<div class="container-fluid" >
+
+    <div class="d-flex">
+        <div class="p-4 flex-grow-1"><span style="color: #AD1457; font-size: 24px;">Lista de Inscripciones</span></div>
+        <div class="p-2">
+            <button mat-mini-fab color="warn" (click)="openDialog()" >
+                <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
+              </button>
+        </div>
+        <div class="p-3"><span style="color: #E53935; font-size: 20px;">Agregar</span> </div>
+      </div>
+
+</div>
+
+
+
+<div class="container">
+
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z4">
+    <!-- Position Column -->
+    <ng-container matColumnDef="numero">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="curso">
+      <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.curso}} </mat-cell>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="alumno">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.alumno}} </mat-cell>
+    </ng-container>
+  
+       <ng-container matColumnDef="accion">
+
+      <mat-header-cell *matHeaderCellDef>Accion</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+          <mat-icon class="mat-18 color-blue cursor-pointer" (click)="editarInscripcion(element)">edit</mat-icon>   
+          <mat-icon class="mat-18 color-red cursor-pointer"  (click)="borrarInscripcion(element.id)">delete</mat-icon>   
+      </mat-cell>
+     
+  </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+   
+  </mat-table>
+
+</div>
+
+

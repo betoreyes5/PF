@@ -1,0 +1,17 @@
+.color-red{
+    color: red;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.color-blue{
+    color: #2E2EFE;
+}
+
+.container{
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
